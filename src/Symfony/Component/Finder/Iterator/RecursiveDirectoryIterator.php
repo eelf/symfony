@@ -138,7 +138,7 @@ class RecursiveDirectoryIterator extends \RecursiveDirectoryIterator
         }
 
         if (false !== $stream = @opendir($this->getPath())) {
-            $infos = stream_get_meta_data($stream);
+            $infos = @stream_get_meta_data($stream);
             closedir($stream);
 
             if ($infos['seekable']) {
